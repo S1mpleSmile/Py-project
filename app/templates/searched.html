@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+    <head>
+        <style>
+            .photo {
+                float: right;
+            }
+            .smth {
+            hyphens: auto;
+            }
+        </style>
+        <title> {{ page.name }}</title>
+    </head>
+<body>
+<p>
+    <h1 class = "smth"> {{page.name}}<small><small><sup><a href="{{url_for('edit',id_post = page.id_post) }}">[edit]</a></sup></small></small> </h1>
+    <p class = "smth">
+    <span class = "photo">
+        <img src = "{{page.photo}}">
+    </span>
+    {{ page.text }}
+    </p>
+</p>
+</body>
+</html>
+{% endblock %}

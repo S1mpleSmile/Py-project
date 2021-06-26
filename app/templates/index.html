@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %} <h2> It's the main page, the start of your journey<small><small><sup><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ%22%3E">[edit]</a></sup></small></small></h2>
+<form action="{{url_for('searched')}}" method="post" class="form-contact">
+    <input name="s" placeholder="Search..." type="search">
+    <button type="submit">Go</button>
+</form>
+<h3> Site navigation: </h3>
+<ul class = "list-posts">
+    {% for u in list %}
+    <li>
+    <p align="left"> <a href="{{ url_for('page', id_post = u.id_post) }}"> {{u.name}} </a> </p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
